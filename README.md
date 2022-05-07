@@ -1,0 +1,2 @@
+# ArraySort
+#include &lt;Array.au3> #include &lt;File.au3> #include &lt;String.au3>  $aTxt = FileReadToArray("test.txt") ; This is a list of tracks not in order  Local $aNew[UBound($aTxt)][2] For $i = 0 To UBound($aTxt) - 1     $aMatch = StringRegExp($aTxt[$i], "\d{1,2}", 1)     $aNew[$i][0] = StringFormat("%02i", $amatch[0])     $aNew[$i][1] = $aTxt[$i] Next  _ArraySort($aNew) _ArrayColDelete($aNew, 0) _ArrayDisplay($aNew)
